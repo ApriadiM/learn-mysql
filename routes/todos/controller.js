@@ -32,7 +32,7 @@ module.exports = {
     updateOne: (req, res) => {
         connection.query(
             `UPDATE todo SET ? WHERE id = ?`,
-            [`${req.body.todo}`, `${req.params.id}`],
+            [req.body, `${req.params.id}`],
             (error, results, fields) => {
             if (error) {
                 res.status(500).send({ message: "there is something error"}
