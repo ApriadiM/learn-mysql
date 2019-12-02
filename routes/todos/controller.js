@@ -2,7 +2,7 @@ const { connection } = require("../../config");
 
 module.exports = {
     getAll: (req, res) => {
-        connection.query(`Select * From todo`, (error, results, fields) => {
+        connection.query(`Select * From todo WHERE name='${req.params.name}`, (error, results, fields) => {
             if (error) {
                 res.status(500).send({ message: "there is something error"}
                 );
