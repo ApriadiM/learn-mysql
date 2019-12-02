@@ -16,8 +16,7 @@ module.exports = {
     },
     addOne: (req, res) => {
         connection.query(
-            `INSERT INTO todo SET ?`,
-            req.body,
+            `INSERT INTO todo (id, todo, name, email) VALUES (NULL, '${req.body.todo}', '${req.body.name}', '${req.body.email}')`,
             (error, results, fields) => {
             if (error) {
                 res.status(500).send({ message: "there is something error"}

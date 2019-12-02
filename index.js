@@ -13,7 +13,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/todos", require("./routes/todos"));
-app.use("/users", require("./routes/users"));
 
 connection.connect(function(err){
     if(err) {
